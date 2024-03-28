@@ -16,11 +16,12 @@
           хозяина. Если ты готов заботиться о ком-то и подарить ему любовь и
           тепло, то мы ждём тебя!
         </p>
-        <button
+        <a
+          href="/catalog"
           class="border rounded-full py-2 px-4 transition-all hover:bg-slate-200 hover:text-black"
         >
           Найти друга
-        </button>
+        </a>
       </div>
     </div>
   </div>
