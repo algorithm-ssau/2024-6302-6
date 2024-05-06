@@ -2,7 +2,7 @@
 import Header from "../../components/Header.vue";
 </script>
 <template>
-<Header/>    
+<Header/> 
     <div class="about-us">
         <div class="background-image"></div>
       <div class="background-image"></div>
@@ -33,6 +33,7 @@ import Header from "../../components/Header.vue";
       </div>
         <div class="join-us">
       <h2>Присоединяйтесь к AnimalShelter и помогите нам создать лучшую жизнь для животных!</h2>
+      <button class="join-btn" @click="join">Присоединиться</button>
         </div>
     </div>
   </template>
@@ -132,5 +133,23 @@ import Header from "../../components/Header.vue";
   font-size: 24px;
   margin: 0;
 }
+.join-btn {
+  background-color: #ccc;
+  color: white;
+  border: none;
+  padding: 10px 40px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.join-btn:hover {
+  background-color: #c4c2c2;
+}
+
   </style>
   
