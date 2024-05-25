@@ -15,7 +15,7 @@ const pet = ref();
 <template>
   <div class="h-16" />
   <div class="h-full w-full">
-    <div class="h-20 flex justify-center items-center bg-orange-100">{{pet.name}} - {{pet.age}} лет</div>
+    <div class="h-20 flex justify-center items-center bg-orange-100 font-bold">Имя: {{pet.name}} - Возраст: {{pet.age}}</div>
     <div class="flex flex-col">
       <div class="flex">
         <div class="p-8">
@@ -35,8 +35,8 @@ const pet = ref();
           </div>
         </div>
         <div class="py-8 mr-8 w-full">
-            <div class="bg-orange-100 h-16 border-2  rounded-tl-xl rounded-tr-xl overflow-hidden">1</div>
-            <div class="h-64 border-2 rounded-b-xl">{{ pet.description }}</div>
+            <div class="bg-orange-100 h-16 border-2  rounded-tl-xl rounded-tr-xl overflow-hidden p-4">•есть ветпаспорт   •обработан от паразитов   •приучен к когтеточке   •вакцинирован</div>
+            <div class="h-64 border-2 rounded-b-xl p-4">{{ pet.description }}</div>
         </div>
     </div>
     </div>
