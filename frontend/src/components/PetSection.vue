@@ -27,7 +27,7 @@ const pet = ref();
           </div>
           <div class="m-8">
             <a
-              href="/catalog"
+              href="/takepets"
               class="mx-6 border rounded-full py-4 px-8 transition-all bg-orange-100 hover:bg-orange-300 hover:text-black"
             >
               Взять котика
