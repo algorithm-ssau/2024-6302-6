@@ -20,7 +20,7 @@ const pets = ref([]);
       v-for="pet in pets"
       :name="pet.name"
       :image="pet.image_url"
-      href="/"
+      :href="'/petpage?id='+pet._id"
     />
   </div>
 </template>

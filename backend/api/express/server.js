@@ -27,7 +27,10 @@ app.get("/animals", async (req, res) => {
   res.json(animals);
 });
 
-app.get("/animals/:id", async (req, res) => {});
+app.get("/animals/:id", async (req, res) => {
+  const animal = await Animal.findById(req.params.id);
+  res.json(animal);
+});
 
 app.post("/animals", async (req, res) => {
   const animal = new Animal(JSON.parse(req.body));
