@@ -1,11 +1,13 @@
 <template>
-  <Header/>
-  <div id="app" class="container">
-    <div class="product-container">
-      <ProductList class="product-list" :addToCart="addToCart" />
-    </div>
-    <div class="cart-container">
-      <Cart class="cart" :cartItems="cartItems" />
+  <div>
+    <Header />
+    <div id="app" class="container">
+      <div class="product-container">
+        <ProductList class="product-list" :addToCart="addToCart" />
+      </div>
+      <div class="cart-container">
+        <Cart class="cart" :cartItems="cartItems" />
+      </div>
     </div>
   </div>
 </template>
@@ -45,7 +47,7 @@ html, body {
 
 #app {
   display: flex;
-  width: 100%;
+  flex: 1;
 }
 
 .container {
@@ -59,11 +61,13 @@ html, body {
 .cart-container {
   margin-top: 60px;
   flex: 1;
+  display: flex; /* Добавьте эту строку */
+  flex-direction: row; /* Добавьте эту строку */
 }
 
 .product-list,
 .cart {
-  width: 100%;
+  flex: 1;
 }
 
 .header {
