@@ -8,7 +8,12 @@
         <a href="/catalog" class="hover:underline underline-offset-4">
           Наши питомцы
         </a>
-        <a href="/about" class="hover:underline underline-offset-4">О нас</a>
+        <a href="/about" class="hover:underline underline-offset-4">
+          О нас
+        </a>
+        <a href="/registration" class="hover:underline underline-offset-4">
+          Вход
+        </a>
       </div>
     </div>
   </header>
