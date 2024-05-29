@@ -6,7 +6,7 @@
         <img :src="product.image" :alt="product.name" class="product-image">
         <h3>{{ product.name }}</h3>
         <p>{{ product.price }} $</p>
-        <button @click="addToCart(product)">Добавить в корзину</button>
+        <button @click="addToCart(product)" class="add-to-cart-button">Добавить в корзину</button>
       </div>
     </div>
   </div>
@@ -86,7 +86,7 @@ export default {
   border-radius: 10px;
 }
 
-.product-card button {
+.add-to-cart-button {
   background-color: #42b983;
   border: none;
   border-radius: 5px;
@@ -97,7 +97,7 @@ export default {
   transition: background-color 0.3s ease;
 }
 
-.product-card button:hover {
+.add-to-cart-button:hover {
   background-color: #369a75;
 }
 </style>
