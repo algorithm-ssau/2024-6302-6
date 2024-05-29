@@ -25,7 +25,8 @@ app.use(cors());
 
 // Запуск сервера на порту 3000
 app.listen(3000);
-// получени всех
+
+// получени всех -- find({})
 app.get("/animals", async (req, res) => {
   const animals = await Animal.find();
   res.json(animals);
@@ -41,6 +42,7 @@ app.post("/animals", async (req, res) => {
   await animal.save();
   res.send("ok");
 });
+// этого нет 
 // обновление
 app.put("/animals/:id", (req, res) => {});
 // удаление 
