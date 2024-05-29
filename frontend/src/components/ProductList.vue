@@ -2,7 +2,7 @@
   <div class="product-list">
     <h2 class="catalog-title">Каталог продуктов</h2>
     <div class="products-container">
-      <div class="product-card" v-for="product in products" :key="product.id">
+      <div class="product-card" v-for="product in products" :key="product._id">
         <img :src="product.image" :alt="product.name" class="product-image">
         <h3>{{ product.name }}</h3>
         <p>{{ product.price }} $</p>
@@ -13,19 +13,27 @@
 </template>
 
 <script>
+import axios from 'axios';
+
 export default {
   props: ['addToCart'],
   data() {
     return {
-      products: [
-        { id: 1, name: 'Продукт 1', price: 100, image: 'https://i.pinimg.com/736x/25/94/a2/2594a27e3207f073f27908d055213585.jpg' },
-        { id: 2, name: 'Продукт 2', price: 200, image: 'https://i.pinimg.com/736x/25/94/a2/2594a27e3207f073f27908d055213585.jpg' },
-        { id: 3, name: 'Продукт 3', price: 300, image: 'https://i.pinimg.com/736x/25/94/a2/2594a27e3207f073f27908d055213585.jpg' },
-        { id: 4, name: 'Продукт 1', price: 100, image: 'https://i.pinimg.com/736x/25/94/a2/2594a27e3207f073f27908d055213585.jpg' },
-        { id: 5, name: 'Продукт 2', price: 200, image: 'https://i.pinimg.com/736x/25/94/a2/2594a27e3207f073f27908d055213585.jpg' },
-        { id: 6, name: 'Продукт 3', price: 300, image: 'https://i.pinimg.com/736x/25/94/a2/2594a27e3207f073f27908d055213585.jpg' }
-      ]
+      products: []
     };
+  },
+  methods: {
+    async fetchProducts() {
+      try {
+        const response = await axios.get('http://localhost:5000/api/products');
+        this.products = response.data;
+      } catch (error) {
+        console.error("There was an error fetching the products:", error);
+      }
+    }
+  },
+  created() {
+    this.fetchProducts();
   }
 };
 </script>
