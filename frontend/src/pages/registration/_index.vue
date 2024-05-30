@@ -1,9 +1,33 @@
 <script setup>
 import Header from "../../components/Header.vue";
-</script>
+const username = defineModel("username");
+    const email = defineModel("email");
+    const password = defineModel("password");
+    const URL = "http://localhost:3000";
 
-<template>
-<Header/>
+    async function add() 
+    {
+      try {
+        await fetch(URL + "/users", {
+          mode: "no-cors",
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            username: username.value,
+            email: email.value,
+            password: password.value,
+          }),
+        });
+      } catch (error) {
+        console.log(error);
+      }
+    }
+</script>
+<!-- template - username - email - password -->
+  <template>
+    <Header/>
     <div class="registration-form">
       <h2>Регистрация</h2>
       <form @submit.prevent="registerUser">
@@ -11,36 +35,18 @@ import Header from "../../components/Header.vue";
         <input type="text" id="username" v-model="username" required>
   
         <label for="email">Email:</label>
-        <input type="email" id="email" v-model="email" required>
+        <input type="text" id="email" v-model="email" required>
   
         <label for="password">Пароль:</label>
-        <input type="password" id="password" v-model="password" required>
-  
-        <button type="submit">Зарегистрироваться</button>
+        <input type="text" id="password" v-model="password" required>
+        <button @click="add">Зарегистрироваться</button>
       </form>
     </div>
   </template>
-  
-  <script>
-  export default {
-    data() {
-      return {
-        username: '',
-        email: '',
-        password: ''
-      };
-    },
-    methods: {
-      registerUser() {
-        // Здесь можно добавить логику для регистрации пользователя, например, отправку данных на сервер
-        console.log('Регистрация пользователя:', this.username, this.email, this.password);
-      }
-    }
-  };
-  </script>
-  
+    
   <style scoped>
   .registration-form {
+    padding-top: 140px;
     max-width: 400px;
     margin: 0 auto;
   }

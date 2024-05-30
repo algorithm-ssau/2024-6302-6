@@ -14,6 +14,13 @@ const AnimalSchema = new mongoose.Schema({
   image_url: String,
 });
 
+const userSchema = new mongoose.Schema({
+  username: String,
+  email: String,
+  password: String
+});
+
+const User = mongoose.model('User', userSchema);
 const Animal = mongoose.model("Animal", AnimalSchema);
 // Импорт express
 const app = express();
@@ -25,7 +32,7 @@ app.use(cors());
 
 // Запуск сервера на порту 3000
 app.listen(3000);
-
+// Animal
 // получени всех -- find({})
 app.get("/animals", async (req, res) => {
   const animals = await Animal.find();
@@ -42,6 +49,23 @@ app.post("/animals", async (req, res) => {
   await animal.save();
   res.send("ok");
 });
+// User
+app.get("/users/:name", async (req, res) => {
+  const user = await User.find();
+  res.json(user);
+});
+
+app.get("/users", async (req, res) => {
+  const user = await User.findOne();
+  res.json(user);
+});
+
+app.post("/users", async (req, res) => {
+  const user = new User(JSON.parse(req.body));
+  await user.save();
+  res.send("ok");
+});
+
 // этого нет 
 // обновление
 app.put("/animals/:id", (req, res) => {});
