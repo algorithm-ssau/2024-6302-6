@@ -17,7 +17,8 @@ const AnimalSchema = new mongoose.Schema({
 const userSchema = new mongoose.Schema({
   username: String,
   email: String,
-  password: String
+  password: String, 
+  usersystem: String  
 });
 
 const User = mongoose.model('User', userSchema);
@@ -31,7 +32,7 @@ app.use(express.text());
 app.use(cors());
 
 // Запуск сервера на порту 3000
-app.listen(3000);
+app.listen(3000, ()=>console.log("Сервер запущен по адресу http://localhost:3000"));
 // Animal
 // получени всех -- find({})
 app.get("/animals", async (req, res) => {
@@ -52,11 +53,6 @@ app.post("/animals", async (req, res) => {
 // User
 app.get("/users/:name", async (req, res) => {
   const user = await User.find();
-  res.json(user);
-});
-
-app.get("/users", async (req, res) => {
-  const user = await User.findOne();
   res.json(user);
 });
 

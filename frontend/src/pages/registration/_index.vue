@@ -1,9 +1,12 @@
 <script setup>
 import Header from "../../components/Header.vue";
-const username = defineModel("username");
+import { ref } from "vue";
+    const username = defineModel("username");
     const email = defineModel("email");
     const password = defineModel("password");
+    const usersystem = defineModel("usersystem");
     const URL = "http://localhost:3000";
+    const persons = ref([]);    
 
     async function add() 
     {
@@ -18,12 +21,26 @@ const username = defineModel("username");
             username: username.value,
             email: email.value,
             password: password.value,
+            usersystem: usersystem.value
           }),
         });
       } catch (error) {
         console.log(error);
       }
-    }
+    };
+
+    async function get_2() {
+      const response = await fetch(URL + "/users/:name");
+      persons.value = await response.json();
+      console.log("Вывод результата в консоль: ");
+      console.log(persons.value[0].username);
+    };
+
+    get_2();
+
+
+    
+
 </script>
 <!-- template - username - email - password -->
   <template>
@@ -39,9 +56,19 @@ const username = defineModel("username");
   
         <label for="password">Пароль:</label>
         <input type="text" id="password" v-model="password" required>
-        <button @click="add">Зарегистрироваться</button>
+        <template v-for="person in persons">
+          <p v-if="person.username === username">
+            <button @click="">Войти</button>
+          </p>          
+        </template>        
+        <button v-if="persons.length === 0 || !persons.some(person => person.username === username)" @click="add">Зарегистрироваться</button>        
+        <div v-if="persons.length > 0">
+          <template v-for="person in persons">
+            <p v-if="person.username === username">Человек под именем {{ person.username }} уже существует</p>          
+          </template>
+        </div>
       </form>
-    </div>
+    </div>    
   </template>
     
   <style scoped>
