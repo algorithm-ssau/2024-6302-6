@@ -9,7 +9,12 @@
           Наши питомцы
         </a>
         <a href="/donations" class="hover:underline underline-offset-4">Пожертвования</a>
-        <a href="/about" class="hover:underline underline-offset-4">О нас</a>
+        <a href="/about" class="hover:underline underline-offset-4">
+          О нас
+        </a>
+        <a href="/registration" class="hover:underline underline-offset-4">
+          Вход
+        </a>
       </div>
     </div>
   </header>

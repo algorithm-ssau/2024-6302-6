@@ -1,19 +1,33 @@
+<script setup>
+import { ref } from "vue";
+
+const params = new URL(document.location).searchParams;
+const url = "http://localhost:3000/animals/" + params.get("id");
+
+const pet = ref();
+(async function f() {
+  const response = await fetch(url);
+  pet.value = await response.json();
+})();
+
+</script>
+
 <template>
   <div class="h-16" />
   <div class="h-full w-full">
-    <div class="h-20 flex justify-center items-center bg-orange-100">Имя - Возраст</div>
+    <div class="h-20 flex justify-center items-center bg-orange-100 font-bold">Имя: {{pet.name}} - Возраст: {{pet.age}}</div>
     <div class="flex flex-col">
       <div class="flex">
         <div class="p-8">
           <div class="w-72 h-80 border-2 shadow-lg rounded-xl overflow-hidden">
             <img
               class="object-cover h-full w-full"
-              src="https://i.pinimg.com/736x/3c/39/6b/3c396bcea19f7e845ed39f682773214f.jpg"
+              :src="pet.image_url"
             />
           </div>
           <div class="m-8">
             <a
-              href="/catalog"
+              href="/takepets"
               class="mx-6 border rounded-full py-4 px-8 transition-all bg-orange-100 hover:bg-orange-300 hover:text-black"
             >
               Взять котика
@@ -21,8 +35,8 @@
           </div>
         </div>
         <div class="py-8 mr-8 w-full">
-            <div class="bg-orange-100 h-16 border-2  rounded-tl-xl rounded-tr-xl overflow-hidden">1</div>
-            <div class="h-64 border-2 rounded-b-xl">2</div>
+            <div class="bg-orange-100 h-16 border-2  rounded-tl-xl rounded-tr-xl overflow-hidden p-4">•есть ветпаспорт   •обработан от паразитов   •приучен к когтеточке   •вакцинирован</div>
+            <div class="h-64 border-2 rounded-b-xl p-4">{{ pet.description }}</div>
         </div>
     </div>
     </div>
