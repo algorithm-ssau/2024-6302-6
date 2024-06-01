@@ -72,6 +72,66 @@ import { ref } from "vue";
   </template>
     
   <style scoped>
+    registration-form {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+  }
+
+  .registration-form h2 {
+    text-align: center;
+  }
+
+  .registration-form form {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .registration-form label {
+    margin-top: 10px;
+  }
+
+  .registration-form input {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+  }
+
+  .registration-form button {
+    padding: 8px 15px;
+    margin-top: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+  }
+
+  .registration-form button:hover {
+    background-color: #0056b3;
+  }
+
+  /* Стили для сообщений об ошибке или успешной регистрации */
+  .registration-form p {
+    margin-top: 10px;
+  }
+
+  /* Стили для кнопки "Войти" */
+  .registration-form button.login-button {
+    background-color: #28a745;
+  }
+
+  .registration-form button.login-button:hover {
+    background-color: #218838;
+  }
+
+
   .registration-form {
     padding-top: 140px;
     max-width: 400px;
