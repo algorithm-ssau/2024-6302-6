@@ -1,49 +1,48 @@
 
 <script setup>
+
 import Header from "../../components/Header.vue";
 import { ref } from "vue";
-    const username = defineModel("username");
-    const email = defineModel("email");
-    const password = defineModel("password");
-    const usersystem = defineModel("usersystem");
-    const URL = "http://localhost:3000";
-    const persons = ref([]);    
 
-    async function add() 
-    {
-      if (username && email && password) {
-        try {
+
+
+
+  const username = defineModel("username");
+  const email = defineModel("email");
+  const password = defineModel("password");
+  const usersystem = defineModel("usersystem");
+  const URL = "http://localhost:3000";
+  const persons = ref([]);    
+
+
+  async function add() 
+  {
+    if (username && email && password) {
+      try {
         
-          await fetch(URL + "/users", {
-            mode: "no-cors",
-            method: "POST",
-            headers: {
-              "Content-Type": "application/json",
-            },
-            body: JSON.stringify({
-              username: username.value,
-              email: email.value,
-              password: password.value,
-              usersystem: usersystem.value
-            }),
-          });
-        } catch (error) 
-        {
-          console.log(error);
-        }
-        setTimeout(() => {
-          window.location='/';
-          console.log("Переход на другую страницу...");
-          }, 1000); 
-      }
+        await fetch(URL + "/users", {
+          mode: "no-cors",
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            username: username.value,
+            email: email.value,
+            password: password.value,
+            usersystem: usersystem.value
+          }),
+        });
+      } catch (error) 
+      {
+        console.log(error);
+      }        setTimeout(() => {
+        window.location='/';
+        console.log("Переход на другую страницу...");
+        }, 1000); 
+    }
       
     };
-
-    function login(){
-
-    
-
-    }
 
     async function get_2() {
       const response = await fetch(URL + "/users/:name");
@@ -63,7 +62,6 @@ import { ref } from "vue";
         }, 2000); 
       }
     }
-
 
     get_2();
 
@@ -91,7 +89,10 @@ import { ref } from "vue";
               Правильный пароль
             </p>
             <p v-if="person.username === username">
-              <button @click="">Войти</button>
+              <button @click="">
+                
+                Войти
+              </button>
             </p>
           </p>
                     
