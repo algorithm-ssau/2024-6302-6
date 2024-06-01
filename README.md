@@ -14,6 +14,7 @@
 - Express
 - Mongoose
 - MongoDB
+- Flask
 
 ## Запуск проекта
 
