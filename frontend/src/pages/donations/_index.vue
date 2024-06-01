@@ -6,7 +6,7 @@
         <ProductList class="product-list" :addToCart="addToCart" />
       </div>
       <div class="cart-container">
-        <Cart class="cart" :cartItems="cartItems" />
+        <Cart class="cart" :cartItems="cartItems" @update:cartItems="updateCartItems" />
       </div>
     </div>
   </div>
@@ -32,10 +32,14 @@ export default {
   methods: {
     addToCart(product) {
       this.cartItems.push(product);
+    },
+    updateCartItems(newCartItems) {
+      this.cartItems = newCartItems;
     }
   }
 };
 </script>
+
 
 <style>
 html, body {
