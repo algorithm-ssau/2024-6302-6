@@ -10,6 +10,7 @@ CORS(app)
 client = MongoClient('mongodb://localhost/animalshelter')
 db = client.animalshelter
 products_collection = db.products
+cart_collection = db.cart
 
 # Маршрут для получения списка продуктов
 @app.route('/api/products', methods=['GET'])
@@ -31,6 +32,18 @@ def add_product():
     result = products_collection.insert_one(product)
     product['_id'] = str(result.inserted_id)
     return jsonify(product), 201
+
+# Маршрут для создания заказа
+@app.route('/api/cart', methods=['POST'])
+def create_order():
+    data = request.json
+    order = {
+        "items": data.get('items'),
+        "total": sum(item['price'] for item in data.get('items', []))
+    }
+    result = cart_collection.insert_one(order)
+    order['_id'] = str(result.inserted_id)
+    return jsonify(order), 201
 
 if __name__ == '__main__':
     app.run(debug=True)

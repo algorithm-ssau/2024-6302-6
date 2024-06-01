@@ -16,6 +16,7 @@ import axios from 'axios';
 
 export default {
   props: ['cartItems'],
+  emits: ['update:cartItems'],
   computed: {
     totalAmount() {
       return this.cartItems.reduce((total, item) => total + parseFloat(item.price), 0);
@@ -29,9 +30,13 @@ export default {
         };
         await axios.post('http://localhost:5000/api/cart', orderData);
         alert('Заказ успешно оформлен!');
+        this.clearCart();
       } catch (error) {
         console.error('Ошибка при оформлении заказа:', error);
       }
+    },
+    clearCart() {
+      this.$emit('update:cartItems', []);
     }
   }
 };
