@@ -1,3 +1,4 @@
+
 <script setup>
 import Header from "../../components/Header.vue";
 import { ref } from "vue";
@@ -10,23 +11,32 @@ import { ref } from "vue";
 
     async function add() 
     {
-      try {
-        await fetch(URL + "/users", {
-          mode: "no-cors",
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({
-            username: username.value,
-            email: email.value,
-            password: password.value,
-            usersystem: usersystem.value
-          }),
-        });
-      } catch (error) {
-        console.log(error);
+      if (username && email && password) {
+        try {
+        
+          await fetch(URL + "/users", {
+            mode: "no-cors",
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+              username: username.value,
+              email: email.value,
+              password: password.value,
+              usersystem: usersystem.value
+            }),
+          });
+        } catch (error) 
+        {
+          console.log(error);
+        }
+        setTimeout(() => {
+          window.location='/';
+          console.log("Переход на другую страницу...");
+          }, 1000); 
       }
+      
     };
 
     async function get_2() {
@@ -36,10 +46,17 @@ import { ref } from "vue";
       console.log(persons.value[0].username);
     };
 
+    function navigateToAnotherPage() {
+      if (username && email && password) {
+        setTimeout(() => {
+          window.location='/';
+          console.log("Переход на другую страницу...");
+        }, 2000); 
+      }
+    }
+
+
     get_2();
-
-
-    
 
 </script>
 <!-- template - username - email - password -->
@@ -60,13 +77,15 @@ import { ref } from "vue";
           <p v-if="person.username === username">
             <button @click="">Войти</button>
           </p>          
-        </template>        
-        <button v-if="persons.length === 0 || !persons.some(person => person.username === username)" @click="add">Зарегистрироваться</button>        
-        <div v-if="persons.length > 0">
-          <template v-for="person in persons">
-            <p v-if="person.username === username">Человек под именем {{ person.username }} уже существует</p>          
-          </template>
-        </div>
+        </template>  
+        <div class="registration-title">     
+          <button v-if="persons.length === 0 || !persons.some(person => person.username === username)" @click="add">Зарегистрироваться</button>        
+          <div v-if="persons.length > 0">
+            <template v-for="person in persons">
+              <p v-if="person.username === username">Человек под именем {{ person.username }} уже существует</p>          
+            </template>
+          </div>
+        </div> 
       </form>
     </div>    
   </template>
@@ -79,6 +98,13 @@ import { ref } from "vue";
     border: 1px solid #ccc;
     border-radius: 5px;
     background-color: #f9f9f9;
+  }
+
+  .registration-title p{
+    padding: 20px;
+    margin-top: 15px;
+    color:yellowgreen;
+    text-align: center;
   }
 
   .registration-form h2 {
@@ -117,12 +143,6 @@ import { ref } from "vue";
     background-color: #0056b3;
   }
 
-  /* Стили для сообщений об ошибке или успешной регистрации */
-  .registration-form p {
-    margin-top: 10px;
-  }
-
-  /* Стили для кнопки "Войти" */
   .registration-form button.login-button {
     background-color: #28a745;
   }
@@ -130,7 +150,6 @@ import { ref } from "vue";
   .registration-form button.login-button:hover {
     background-color: #218838;
   }
-
 
   .registration-form {
     padding-top: 140px;
