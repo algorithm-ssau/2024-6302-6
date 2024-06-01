@@ -4,16 +4,12 @@
 import Header from "../../components/Header.vue";
 import { ref } from "vue";
 
-
-
-
   const username = defineModel("username");
   const email = defineModel("email");
   const password = defineModel("password");
   const usersystem = defineModel("usersystem");
   const URL = "http://localhost:3000";
   const persons = ref([]);    
-
 
   async function add() 
   {
@@ -68,8 +64,9 @@ import { ref } from "vue";
 </script>
 <!-- template - username - email - password -->
   <template>
-    <Header/>
-    <div class="registration-form">
+    <div class="bg-animation">
+      <Header/>
+      <div class="registration-form">
       <h2>Регистрация</h2>
       <form @submit.prevent="registerUser">
         <label for="username">Имя пользователя:</label>
@@ -107,6 +104,9 @@ import { ref } from "vue";
         </div> 
       </form>
     </div>    
+                         
+  </div>
+    
   </template>
     
   <style scoped>
@@ -122,7 +122,7 @@ import { ref } from "vue";
   .registration-title p{
     padding: 20px;
     margin-top: 15px;
-    color:yellowgreen;
+    color:black;
     text-align: center;
   }
 
@@ -196,5 +196,53 @@ import { ref } from "vue";
     background-color: #007bff;
     color: white;
     border: none;
+  }
+
+  .bg-animation {
+    animation: bg-animation 25s ease-in-out infinite;
+
+    width: 100vw; /* 100% of the viewport width */
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    background-image: url('https://adresnie-tablichki.ru/upload/category/bannery/zoo_tematika/fon_s_lapkami_koshki.jpg'); /* Фоновая картинка */
+    background-repeat: no-repeat;
+
+
+
+    font-family: 'Roboto', sans-serif;
+  }
+ 
+  @media (max-width: 620px) {
+      .bg-animation {
+          padding: 100px 20px;
+          font-size: 26px;
+      }
+  }
+  @keyframes bg-animation {
+      0% {
+          background-size: 120%;
+          background-position: 50% 50%
+      }
+      20% {
+          background-size: 150%;
+          background-position: 0 50%;
+      }    
+      40% {
+          background-size: 110%;
+          background-position: 20% 80%;
+      }
+      60% {
+          background-size: 160%;
+          background-position: 60% 10%;
+      }
+      80% {
+          background-size: 120%;
+          background-position: 40% 70%;
+      }    
+      100% {
+          background-size: 120%;
+          background-position: 50% 50%
+      }
   }
   </style>
