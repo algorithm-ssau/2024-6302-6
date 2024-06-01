@@ -29,3 +29,9 @@
 1. Перейдите в папку `backend/api/express`
 2. Установите необходимые зависимости командой `npm install`
 3. Запустите сервер `node server.js`
+
+### Flask Backend
+
+1. Перейдите в папку `backend\api\flask_service`
+2. Установите необходимые зависимости командой `pip install -r requirements.txt`
+3. Запустите сервер `python app.py`
