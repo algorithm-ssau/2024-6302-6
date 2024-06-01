@@ -39,11 +39,20 @@ import { ref } from "vue";
       
     };
 
+    function login(){
+
+    
+
+    }
+
     async function get_2() {
       const response = await fetch(URL + "/users/:name");
       persons.value = await response.json();
-      console.log("Вывод результата в консоль: ");
-      console.log(persons.value[0].username);
+      console.log(persons.value);
+      console.log("Вывод последнего результата в консоль: ");
+      console.log(persons.value[persons.value.length-1].username);
+      console.log("Вывод пароля по имени в консоль: ");
+      //console.log(persons.value[persons.value[0].username.findIndex('test1')].password);
     };
 
     function navigateToAnotherPage() {
@@ -74,9 +83,18 @@ import { ref } from "vue";
         <label for="password">Пароль:</label>
         <input type="text" id="password" v-model="password" required>
         <template v-for="person in persons">
-          <p v-if="person.username === username">
-            <button @click="">Войти</button>
-          </p>          
+          <p v-if="person.username !== password">
+            <p v-if="person.username === username && person.password !== password">
+              Неправильный пароль
+            </p>
+            <p v-else-if="person.username === username && person.password === password">
+              Правильный пароль
+            </p>
+            <p v-if="person.username === username">
+              <button @click="">Войти</button>
+            </p>
+          </p>
+                    
         </template>  
         <div class="registration-title">     
           <button v-if="persons.length === 0 || !persons.some(person => person.username === username)" @click="add">Зарегистрироваться</button>        
