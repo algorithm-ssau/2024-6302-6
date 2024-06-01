@@ -94,6 +94,7 @@ import Header from "../../components/Header.vue";
     height: 100%;
     background-color: rgba(115, 114, 112, 0.4);
     border-radius: 20px;
+    
   }
   
   .about-section h2,
@@ -108,7 +109,7 @@ import Header from "../../components/Header.vue";
   .activities-section p {
     font-size: 18px;
     line-height: 1.6;
-    margin-bottom: 40px;
+    padding: 20px;
   }
   
   @media (max-width: 767px) {
