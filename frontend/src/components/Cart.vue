@@ -1,9 +1,9 @@
 <template>
   <div class="cart" v-if="cartItems.length > 0">
-    <h2 class="cart-title">Корзина</h2>
+    <h2 class="cart-title">Корзина - Общая сумма: {{ totalAmount }} руб.</h2>
     <ul>
       <li v-for="item in cartItems" :key="item.id" class="cart-item">
-        {{ item.name }} - {{ item.price }} $
+        {{ item.name }} - {{ item.price }} руб.
       </li>
     </ul>
     <button @click="makeOrder" class="order-button">Сделать заказ</button>
@@ -16,6 +16,11 @@ import axios from 'axios';
 
 export default {
   props: ['cartItems'],
+  computed: {
+    totalAmount() {
+      return this.cartItems.reduce((total, item) => total + parseFloat(item.price), 0);
+    }
+  },
   methods: {
     async makeOrder() {
       try {

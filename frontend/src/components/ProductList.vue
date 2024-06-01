@@ -5,7 +5,7 @@
       <div class="product-card" v-for="product in products" :key="product._id">
         <img :src="product.image" :alt="product.name" class="product-image">
         <h3>{{ product.name }}</h3>
-        <p>{{ product.price }} $</p>
+        <p>{{ product.price }} руб.</p>
         <button @click="addToCart(product)" class="add-to-cart-button">Добавить в корзину</button>
       </div>
     </div>
