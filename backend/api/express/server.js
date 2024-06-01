@@ -62,8 +62,13 @@ app.post("/users", async (req, res) => {
   res.send("ok");
 });
 
-// этого нет 
 // обновление
-app.put("/animals/:id", (req, res) => {});
+app.post("/animals/:id/update", async (req, res) => {
+  const animal = await Animal.findByIdAndUpdate(req.params.id, JSON.parse(req.body));
+  res.json(animal);
+});
 // удаление 
-app.delete("/animals/:id", (req, res) => {});
+app.get("/animals/:id/delete", async (req, res) => {
+  const animal = await Animal.findByIdAndDelete(req.params.id);
+  res.send("ok");
+});
