@@ -38,7 +38,7 @@ import Header from "../../components/Header.vue";
       </div>
       <div class="location">
         <h2>Где мы находимся</h2>
-        <a href="https://yandex.ru/maps/?um=constructor%3Af0f2a4dd687fe4d0c1eef58189d6ee09f102e5772af4304f72848d96ca6d52dd&amp;source=constructorStatic" class="map" target="_blank"><img src="https://api-maps.yandex.ru/services/constructor/1.0/static/?um=constructor%3Af0f2a4dd687fe4d0c1eef58189d6ee09f102e5772af4304f72848d96ca6d52dd&amp;width=500&amp;height=300&amp;lang=ru_RU" alt="" style="border: 0;" /></a>
+        <a href="https://yandex.ru/maps/?um=constructor%3Af0f2a4dd687fe4d0c1eef58189d6ee09f102e5772af4304f72848d96ca6d52dd&amp;source=constructorStatic" target="_blank"><img src="https://api-maps.yandex.ru/services/constructor/1.0/static/?um=constructor%3Af0f2a4dd687fe4d0c1eef58189d6ee09f102e5772af4304f72848d96ca6d52dd&amp;width=500&amp;height=300&amp;lang=ru_RU" alt="" style="border: 0; box-shadow: 0px 0px 10px black;" /></a>
       </div>
     </div>
   </template>
@@ -135,17 +135,6 @@ z-index: -1;
   }
 }
 
-.location{
-  text-align: center;
-  padding: 20px 0;
-  color: #fff;
-}
-
-.location h2{
-  font-size: 24px;
-  margin: 0;
-  margin-bottom: 20px;
-}
 .join-us {
   text-align: center;
   padding: 20px 0;
@@ -173,6 +162,17 @@ z-index: -1;
 
 .join-btn:hover {
   background-color: #c4c2c2;
+}
+.location{
+  text-align: center;
+  padding: 20px 0;
+  color: #fff;
+}
+
+.location h2{
+  font-size: 24px;
+  margin: 0;
+  margin-bottom: 20px;
 }
 
   </style>
