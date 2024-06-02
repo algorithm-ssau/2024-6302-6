@@ -133,16 +133,17 @@ import Header from "../../components/Header.vue";
 .join-us h2 {
   font-size: 24px;
   margin: 0;
+  margin-bottom: 20px;
 }
 .join-btn {
-  background-color: #ccc;
+  background-color: #8a8a8a;
   color: white;
   border: none;
   padding: 10px 40px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  font-size: 16px;
+  font-size: 18px;
   border-radius: 5px;
   cursor: pointer;
   transition: background-color 0.3s ease;
