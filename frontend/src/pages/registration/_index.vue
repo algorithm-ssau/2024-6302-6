@@ -123,14 +123,6 @@ import { ref } from "vue";
     border-radius: 5px;
     background-color: #f9f9f9;
   }
-
-  .registration-title p{
-    padding: 20px;
-    margin-top: 15px;
-    color:black;
-    text-align: center;
-  }
-
   .registration-form h2 {
     text-align: center;
   }
@@ -201,6 +193,7 @@ import { ref } from "vue";
     background-color: #007bff;
     color: white;
     border: none;
+    margin-left: 88.55px;
   }
 
   .bg-animation {
