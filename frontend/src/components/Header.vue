@@ -52,5 +52,4 @@ export default {
   transform: scaleX(1);
 }
 
-
 </style>
