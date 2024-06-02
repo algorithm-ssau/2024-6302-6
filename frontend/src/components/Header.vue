@@ -24,7 +24,7 @@ export default {
 </template>
 
 <style scoped>
-.nav-item{
+.nav-item, .text-lg{
   position: relative;
   text-decoration: none;
   transition:color 0.3s linear;
@@ -42,7 +42,7 @@ export default {
   transform: scaleX(0);
   transition: transform 0.3s ease;
 }
-.nav-item:hover{
+.nav-item:hover, .text-lg:hover{
   color:bisque;
   /*text-decoration: underline;
   text-underline-offset: 4px;*/
