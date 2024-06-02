@@ -27,6 +27,7 @@ export default {
 .nav-item{
   position: relative;
   text-decoration: none;
+  transition:color 0.3s linear;
 }
 
 .nav-item::before{
