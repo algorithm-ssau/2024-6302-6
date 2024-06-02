@@ -31,10 +31,10 @@ import Header from "../../components/Header.vue";
             <p>Email: info@animalshelter.com</p>
         </div>
       </div>
-        <div class="join-us">
-      <h2>Присоединяйтесь к AnimalShelter и помогите нам создать лучшую жизнь для животных!</h2>
-      <button class="join-btn" @click="join">Присоединиться</button>
-        </div>
+      <div class="join-us">
+        <h2>Присоединяйтесь к AnimalShelter и помогите нам создать лучшую жизнь для животных!</h2>
+        <button class="join-btn" @click="join">Присоединиться</button>
+      </div>
     </div>
   </template>
   
