@@ -66,6 +66,7 @@ import { ref } from "vue";
   <template>
     <div class="bg-animation">
       <Header/>
+      <div class="empty-block"></div>
       <div class="registration-form">
       <h2>Регистрация</h2>
       <form @submit.prevent="registerUser">
@@ -110,7 +111,11 @@ import { ref } from "vue";
   </template>
 
   <style scoped>
-    registration-form {
+
+  .empty-block{
+    height:64px;
+  }
+    .registration-form {
     max-width: 400px;
     margin: 0 auto;
     padding: 20px;
@@ -118,14 +123,6 @@ import { ref } from "vue";
     border-radius: 5px;
     background-color: #f9f9f9;
   }
-
-  .registration-title p{
-    padding: 20px;
-    margin-top: 15px;
-    color:black;
-    text-align: center;
-  }
-
   .registration-form h2 {
     text-align: center;
   }
@@ -171,9 +168,9 @@ import { ref } from "vue";
   }
 
   .registration-form {
-    padding-top: 140px;
     max-width: 400px;
     margin: 0 auto;
+    margin-top: 80px;
   }
 
   form {
@@ -196,6 +193,7 @@ import { ref } from "vue";
     background-color: #007bff;
     color: white;
     border: none;
+    margin-left: 88.55px;
   }
 
   .bg-animation {
