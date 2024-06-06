@@ -44,12 +44,18 @@ export default {
   margin: 0 auto;
   padding: 20px;
   text-align: center; /* Центрируем текст */
+  padding-left: 10rem;
+  padding-right: 10rem;
 }
 
 .catalog-title {
   font-size: 24px;
   color: #333; /* Цвет текста */
   margin-bottom: 20px; /* Отступ снизу */
+  background-color: white;
+  padding-left: 1rem;
+  border-radius: 10px;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .products-container {
