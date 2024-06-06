@@ -3,7 +3,7 @@
     <div class="absolute -z-10 w-full h-full overflow-hidden">
       <img
         class="object-cover h-full w-full brightness-[0.6]"
-        src="https://i.pinimg.com/736x/8c/35/67/8c35676f2f4345028101f2ed978d40af.jpg"
+        src="https://img.goodfon.com/wallpaper/nbig/6/df/koshka-kot-doska-brevno.webp"
       />
       <!-- <img
         class="object-cover h-full w-full brightness-[0.6]"
