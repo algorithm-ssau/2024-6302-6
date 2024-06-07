@@ -13,7 +13,7 @@ const pets = ref([]);
   <Header />
   <div class="background"></div>
   <div class="h-16" />
-  <div class="h-20 bg-blue-50 flex justify-center items-center">
+  <div class="label">
     <p class="text-lg">Наши друзья ищут свой дом!</p>
   </div>
   <div class="flex flex-wrap p-10 gap-10 justify-center">
@@ -26,7 +26,7 @@ const pets = ref([]);
   </div>
 </template>
 
-<style>
+<style scoped>
 .background {
   position: absolute;
   top: 0;
@@ -38,5 +38,17 @@ const pets = ref([]);
   background-position: center;
   filter: brightness(0.7) blur(8px);
   z-index: -1;
+}
+
+.label{
+  /*h-20 bg-blue-50 flex justify-center items-center */
+  height: 5rem;
+  display:  flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.355); 
 }
 </style>
