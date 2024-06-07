@@ -24,6 +24,14 @@ export default {
 </template>
 
 <style scoped>
+.nav-item{
+  font-family: 'Tenor Sans';
+}
+
+.text-lg{
+  font-size:1.5rem;
+  font-family: 'Tenor Sans';
+}
 .nav-item, .text-lg{
   position: relative;
   text-decoration: none;

@@ -120,11 +120,23 @@ import { ref } from "vue";
     margin: 0 auto;
     padding: 20px;
     border: 1px solid #ccc;
-    border-radius: 5px;
-    background-color: #f9f9f9;
+    border-radius: 20px;
+    background-color: #00000079;
+    backdrop-filter:blur(20px);
+    color:white;
+
   }
+
+  .registration-form {
+    max-width: 400px;
+    margin: 0 auto;
+    margin-top: 150px;
+  }
+
   .registration-form h2 {
     text-align: center;
+    font-size:2rem;
+    font-family: 'Tenor Sans';
   }
 
   .registration-form form {
@@ -134,6 +146,7 @@ import { ref } from "vue";
 
   .registration-form label {
     margin-top: 10px;
+    font-family: 'Tenor Sans';
   }
 
   .registration-form input {
@@ -143,12 +156,13 @@ import { ref } from "vue";
     margin-bottom: 10px;
     border: 1px solid #ccc;
     border-radius: 3px;
+    background-color: #00000078;
   }
 
   .registration-form button {
     padding: 8px 15px;
     margin-top: 10px;
-    background-color: #007bff;
+    background-color: #b6b6b6;
     color: white;
     border: none;
     border-radius: 3px;
@@ -156,7 +170,7 @@ import { ref } from "vue";
   }
 
   .registration-form button:hover {
-    background-color: #0056b3;
+    background-color: #676767;
   }
 
   .registration-form button.login-button {
@@ -165,12 +179,6 @@ import { ref } from "vue";
 
   .registration-form button.login-button:hover {
     background-color: #218838;
-  }
-
-  .registration-form {
-    max-width: 400px;
-    margin: 0 auto;
-    margin-top: 80px;
   }
 
   form {
