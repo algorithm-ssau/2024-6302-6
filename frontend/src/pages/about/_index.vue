@@ -38,7 +38,7 @@ import Header from "../../components/Header.vue";
       </div>
       <div class="location">
         <h2>Где мы находимся</h2>
-        <a href="https://yandex.ru/maps/?um=constructor%3Af0f2a4dd687fe4d0c1eef58189d6ee09f102e5772af4304f72848d96ca6d52dd&amp;source=constructorStatic" target="_blank"><img src="https://api-maps.yandex.ru/services/constructor/1.0/static/?um=constructor%3Af0f2a4dd687fe4d0c1eef58189d6ee09f102e5772af4304f72848d96ca6d52dd&amp;width=500&amp;height=300&amp;lang=ru_RU" alt="" style="border: 0; box-shadow: 0px 0px 10px black;" /></a>
+        <a href="https://yandex.ru/maps/?um=constructor%3Af0f2a4dd687fe4d0c1eef58189d6ee09f102e5772af4304f72848d96ca6d52dd&amp;source=constructorStatic" target="_blank"><img src="https://api-maps.yandex.ru/services/constructor/1.0/static/?um=constructor%3Af0f2a4dd687fe4d0c1eef58189d6ee09f102e5772af4304f72848d96ca6d52dd&amp;width=500&amp;height=300&amp;lang=ru_RU" alt="" style="border: 0; box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.455); border-radius: 20px;" /></a>
       </div>
     </div>
   </template>
@@ -112,6 +112,7 @@ z-index: -1;
 .activities-section h2 {
   font-size: 32px;
   margin-bottom: 20px;
+  position: relative;
 }
 
 .about-section p,
@@ -120,6 +121,7 @@ z-index: -1;
   font-size: 18px;
   line-height: 1.6;
   padding: 20px;
+  position: relative;
 }
 
 @media (max-width: 767px) {

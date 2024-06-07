@@ -78,6 +78,7 @@ import { ref } from "vue";
 
         <label for="password">Пароль:</label>
         <input type="text" id="password" v-model="password" required>
+        
         <template v-for="person in persons">
           <p v-if="person.username !== password">
             <p v-if="person.username === username && person.password !== password">
@@ -88,7 +89,6 @@ import { ref } from "vue";
             </p>
             <p v-if="person.username === username">
               <button @click="">
-
                 Войти
               </button>
             </p>
